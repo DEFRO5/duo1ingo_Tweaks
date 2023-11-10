@@ -1,7 +1,7 @@
 from flask import Flask, render_template
 import threading
 import json
-import duolingo_request
+import duo1ingo_request
 import logging
 
 app = Flask(__name__)
