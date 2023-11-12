@@ -41,7 +41,7 @@ def make_request(user_id, token, id):
          response.raise_for_status()
          with open("response_output.json", 'w') as output_file:
             json.dump(response.json(), output_file, indent=2)
-         print("Successfully bought" + " " + id + " for " + user_id)
+         print(f"Successfully bought {Fore.YELLOW}{id}{Style.RESET_ALL} for {Fore.CYAN}{user_id}{Style.RESET_ALL}")
      except requests.exceptions.RequestException as ex:
         print(f"Request error: {ex}")
 
@@ -54,5 +54,5 @@ def get_user_creds():
             user_id = user_id_lists[key_id]
             token = os.getenv(f"AUTH_USER_{key_id}") 
             make_request(user_id, token, id)
-        print(f"{Fore.GREEN}Threshold for 60secs{Style.RESET_ALL}")
-        time.sleep(60)    
+        print(f"{Fore.GREEN}Threshold for 70secs{Style.RESET_ALL}")
+        time.sleep(70)  
